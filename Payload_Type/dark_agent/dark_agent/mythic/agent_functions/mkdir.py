@@ -35,7 +35,7 @@ class MkdirCommand(CommandBase):
     help_cmd = "mkdir <directory>"
     description = "Create directory and any necessary parent directories"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1059"]
     argument_class = MkdirArguments
     attributes = CommandAttributes(

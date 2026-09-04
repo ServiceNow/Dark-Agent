@@ -85,7 +85,7 @@ class DownloadCommand(CommandBase):
     description = "Download a file from the target system."
     version = 1
     supported_ui_features = ["file_browser:download"]
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = DownloadArguments
     attackmapping = ["T1020", "T1030", "T1041"]
     attributes = CommandAttributes(

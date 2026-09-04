@@ -35,7 +35,7 @@ class CatCommand(CommandBase):
     help_cmd = "cat <filepath>"
     description = "Read and display file contents"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1005"]
     argument_class = CatArguments
     attributes = CommandAttributes(

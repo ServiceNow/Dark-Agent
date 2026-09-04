@@ -52,7 +52,7 @@ class UploadCommand(CommandBase):
     description = "Upload a file from the Mythic server to the target system."
     version = 1
     supported_ui_features = ["file_browser:upload"]
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = UploadArguments
     attackmapping = ["T1132", "T1030", "T1105"]
     attributes = CommandAttributes(

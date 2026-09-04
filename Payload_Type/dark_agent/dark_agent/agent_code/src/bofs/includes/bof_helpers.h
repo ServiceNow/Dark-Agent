@@ -5,7 +5,7 @@
 #include <string.h>
 
 /*
- * BOF output helpers — platform-transparent JSON building.
+ * BOF output helpers for platform-transparent JSON building.
  *
  * The core problem on macOS AArch64: snprintf variadic calls are ABI-
  * incompatible between aarch64-linux-none (BOF compiler) and Apple's libc,
@@ -61,7 +61,7 @@ static inline void json_escape(char *dst, const char *src, int dsz) {
 }
 
 /* =========================================================
- * bof_result_t — heap-resident growable output buffer
+ * bof_result_t is a heap-resident growable output buffer
  * All state on the heap; safe across external function calls.
  * ========================================================= */
 
@@ -111,7 +111,7 @@ static inline void bof_result_trim(bof_result_t *b) {
     }
 }
 
-/* Append decimal integer — no snprintf */
+/* Append decimal integer without snprintf */
 static inline void bof_result_append_int(bof_result_t *b, int n) {
     char tmp[24]; int i = 0;
     if (n == 0) { tmp[i++] = '0'; }
@@ -175,7 +175,7 @@ static inline void bof_result_append_mac(bof_result_t *b, const unsigned char *m
 }
 
 /* =========================================================
- * JSON field helpers — each appends "key":value,
+ * JSON field helpers each appending "key":value,
  * Call bof_result_trim() before closing the object with "}"
  * ========================================================= */
 

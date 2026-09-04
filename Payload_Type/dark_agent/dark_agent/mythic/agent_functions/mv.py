@@ -46,7 +46,7 @@ class MvCommand(CommandBase):
     help_cmd = "mv <source> <destination>"
     description = "Move or rename files and directories"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1070.006"]
     argument_class = MvArguments
     attributes = CommandAttributes(

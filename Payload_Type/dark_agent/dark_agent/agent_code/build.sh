@@ -118,7 +118,7 @@ build_agent() {
         profile_flags="-D httpx_profile"
     fi
 
-    # Static OpenSSL 3 — baked into the binary, no target libssl dependency.
+    # Static OpenSSL 3 baked into the binary with no target libssl dependency.
     # --as-needed prevents pkg-config's subsequent dynamic -lssl from adding a NEEDED
     # entry once the symbols are already resolved by the static archive.
     export PKG_CONFIG_PATH="/opt/openssl-3/lib64/pkgconfig"
@@ -222,8 +222,7 @@ build_macos() {
     log_info "Phase 2: Zig → Mach-O binary"
 
     # darwin_stop_world.c requires Mach framework internals we can't cross-compile.
-    # These stubs satisfy the linker. GC works cooperatively with Crystal fibers —
-    # the conservative collector tolerates the lack of explicit world-stop on macOS.
+    # These stubs satisfy the linker. GC works cooperatively with Crystal fibers and the conservative collector tolerates the lack of explicit world-stop on macOS.
     cat > /tmp/gc_darwin_stubs.c << 'GCEOF'
 void GC_push_all_stacks(void) {}
 void GC_darwin_register_mach_handler_thread(void *p) { (void)p; }

@@ -16,7 +16,7 @@ class HostnameCommand(CommandBase):
     help_cmd = "hostname"
     description = "Display systems hostname"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1082"]  # System Information Discovery
     argument_class = HostnameArguments
     attributes = CommandAttributes(

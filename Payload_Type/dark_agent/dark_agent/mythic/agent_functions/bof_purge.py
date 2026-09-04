@@ -18,7 +18,7 @@ class BofPurgeCommand(CommandBase):
     help_cmd = "bof_purge"
     description = "Remove all BOFs from memory"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = BofPurgeArguments
     attackmapping = []
     browser_script = None

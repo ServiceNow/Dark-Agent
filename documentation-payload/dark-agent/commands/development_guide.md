@@ -326,7 +326,7 @@ class SleepCommand(CommandBase):
     help_cmd = "sleep [seconds] [jitter %]"
     description = "Adjust the sleep interval and jitter percentage for the agent"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = SleepArguments
     attributes = CommandAttributes(
         builtin=True
@@ -417,7 +417,7 @@ class UploadCommand(CommandBase):
     description = "Upload a file from the Mythic server to the target system."
     version = 1
     supported_ui_features = ["file_browser:upload"]
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = UploadArguments
     attackmapping = ["T1132", "T1030", "T1105"]
     attributes = CommandAttributes(
@@ -493,7 +493,7 @@ class ShellCommand(CommandBase):
     help_cmd = "shell [command] [arguments]"
     description = "Execute shell commands on the target system"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1059.004"]
     argument_class = ShellArguments
     attributes = CommandAttributes(
@@ -565,7 +565,7 @@ class PortscanCommand(CommandBase):
     help_cmd = "portscan <host> <port1,port2,...>"
     description = "Scan specified ports on a target host to check if they're open"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1046"]
     argument_class = PortscanArguments
     attributes = CommandAttributes(

@@ -18,7 +18,7 @@ class IfconfigCommand(CommandBase):
     help_cmd = "ifconfig"
     description = "Display network interface information"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = IfconfigArguments
     attackmapping = ["T1016"]
     attributes = CommandAttributes(
@@ -29,7 +29,7 @@ class IfconfigCommand(CommandBase):
     )
     browser_script = BrowserScript(
         script_name="ifconfig",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
 

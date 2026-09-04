@@ -19,7 +19,7 @@ class BofListCommand(CommandBase):
     help_cmd = "bof_list"
     description = "List all loaded BOFs"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = BofListArguments
     attackmapping = []
     browser_script = None

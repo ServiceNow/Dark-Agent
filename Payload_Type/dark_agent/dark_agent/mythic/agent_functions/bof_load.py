@@ -52,7 +52,7 @@ class BofLoadCommand(CommandBase):
     help_cmd = "bof_load"
     description = "Load a custom BOF file directly into the agent for use with bof_exec"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = BofLoadArguments
     attackmapping = ["T1129"]
     browser_script = None

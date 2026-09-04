@@ -46,7 +46,7 @@ class ChmodCommand(CommandBase):
     help_cmd = "chmod <mode> <filepath>"
     description = "Change file or directory permissions"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1222.002"]
     argument_class = ChmodArguments
     attributes = CommandAttributes(

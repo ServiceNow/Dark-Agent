@@ -63,13 +63,13 @@ class LsCommand(CommandBase):
     help_cmd = "ls [path]"
     description = "List directory contents or file information"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1083"]
     argument_class = LsArguments
     supported_ui_features = ["file_browser:list"]
     browser_script = BrowserScript(
         script_name="ls",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
     attributes = CommandAttributes(

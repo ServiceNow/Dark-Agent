@@ -27,7 +27,7 @@ class BofUnloadCommand(CommandBase):
     help_cmd = "bof_unload <name>"
     description = "Unload a BOF from memory"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = BofUnloadArguments
     attackmapping = []
     browser_script = None

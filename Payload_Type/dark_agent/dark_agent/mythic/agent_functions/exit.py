@@ -17,7 +17,7 @@ class ExitCommand(CommandBase):
     help_cmd = "exit"
     description = "Exit your callback"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = []
     supported_ui_features = ["callback_table:exit"]
     argument_class = ExitArguments

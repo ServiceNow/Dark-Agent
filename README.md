@@ -15,7 +15,7 @@ Dark Agent is a fully-featured Mythic C2 Agent for Linux and macOS environments.
 | Dynamic | Linux x86_64 | 2.27 | RHEL 8+, Ubuntu 18.04+, Debian 10+ |
 | Dynamic | macOS arm64 | N/A | macOS 12+ (Apple Silicon) |
 
-Linux builds have OpenSSL statically linked — no `libssl` dependency on the target. macOS binaries are cross-compiled on Linux via Zig and ad-hoc signed with `rcodesign` (SHA-256 CodeDirectory hashes required by macOS 14+).
+Linux builds have OpenSSL statically linked with no `libssl` dependency on the target. macOS binaries are cross-compiled on Linux via Zig and ad-hoc signed with `rcodesign` (SHA-256 CodeDirectory hashes required by macOS 14+).
 
 ## Mythic Configuration
 
@@ -126,7 +126,7 @@ Each command (like `hostname` and `ifconfig`) is implemented using a BOF file. W
 
 ## Creating Custom BOFs
 
-Writing a BOF is straightforward — include `beacon.h` and implement `coffee()`. The framework handles loading, execution, and sending output back to the operator.
+Writing a BOF is straightforward. Include `beacon.h` and implement `coffee()`. The framework handles loading, execution, and sending output back to the operator.
 
 ### Minimal Example
 
@@ -162,14 +162,14 @@ void coffee(int argc, char **argv) {
 }
 ```
 
-Compile it, drop the `.o` into the payload, load it in Mythic — done.
+Compile it, drop the `.o` into the payload, load it in Mythic. Done.
 
 ### Output API
 
 | Function | Output |
 |---|---|
 | `BeaconOutput(buf, len)` | send raw bytes to the operator |
-| `BeaconPrintf("found %d user=%s", n, u)` | status/debug message — supports `%d %s %p %x` |
+| `BeaconPrintf("found %d user=%s", n, u)` | status/debug message that supports `%d %s %p %x` |
 | `bof_result_append(r, "text")` | `text` |
 | `bof_field_str(r, "name", "ls")` | `"name":"ls",` |
 | `bof_field_int(r, "pid", 1234)` | `"pid":1234,` |

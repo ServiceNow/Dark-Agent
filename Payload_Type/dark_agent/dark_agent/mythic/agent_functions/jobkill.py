@@ -27,8 +27,9 @@ class JobkillCommand(CommandBase):
     help_cmd = "jobkill <task_id>"
     description = "Kill a running BOF job by task ID"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = JobkillArguments
+    supported_ui_features = ["task:job_kill"]
     attackmapping = []
     browser_script = None
     attributes = CommandAttributes(

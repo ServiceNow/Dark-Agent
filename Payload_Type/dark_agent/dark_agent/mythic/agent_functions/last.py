@@ -23,7 +23,7 @@ class LastCommand(CommandBase):
     help_cmd = "last"
     description = "Display login history from wtmp log"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1033"]
     argument_class = LastArguments
     attributes = CommandAttributes(
@@ -34,7 +34,7 @@ class LastCommand(CommandBase):
     )
     browser_script = BrowserScript(
         script_name="last",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
 

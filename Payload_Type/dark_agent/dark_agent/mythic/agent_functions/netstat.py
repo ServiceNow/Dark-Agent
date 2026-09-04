@@ -16,7 +16,7 @@ class NetstatCommand(CommandBase):
     help_cmd = "netstat"
     description = "Display network connection information"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1049"]  # Network Connection Enumeration
     argument_class = NetstatArguments
     attributes = CommandAttributes(
@@ -27,7 +27,7 @@ class NetstatCommand(CommandBase):
     )
     browser_script = BrowserScript(
         script_name="netstat",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
 

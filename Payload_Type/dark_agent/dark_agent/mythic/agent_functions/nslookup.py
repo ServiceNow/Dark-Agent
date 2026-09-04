@@ -51,7 +51,7 @@ class NslookupCommand(CommandBase):
     help_cmd = "nslookup <hostname1>,<hostname2> [nameserver]"
     description = "Perform DNS lookups on comma-separated hostnames with optional nameserver"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1016"]
     argument_class = NslookupArguments
     attributes = CommandAttributes(
@@ -62,7 +62,7 @@ class NslookupCommand(CommandBase):
     )
     browser_script = BrowserScript(
         script_name="nslookup",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
 

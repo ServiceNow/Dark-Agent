@@ -16,7 +16,7 @@ class WhoamiCommand(CommandBase):
     help_cmd = "whoami"
     description = "Display current user information"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = []
     argument_class = WhoamiArguments
     attributes = CommandAttributes(

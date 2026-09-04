@@ -69,7 +69,7 @@ class LoadCommand(CommandBase):
   help_cmd = "load [command]"
   description = "Load a BOF'd command into the agent. This command will display available BOFs that can be loaded."
   version = 1
-  author = "nicholas.romanowski@servicenow.com"
+  author = "@nicholasromanowski"
   argument_class = LoadArguments
   attackmapping = ["T1129"]
   browser_script = None

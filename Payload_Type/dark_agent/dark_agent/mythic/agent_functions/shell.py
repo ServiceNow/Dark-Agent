@@ -29,7 +29,7 @@ class ShellCommand(CommandBase):
     help_cmd = "shell [command]"
     description = "Execute shell commands on the target system"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1059.004"]
     argument_class = ShellArguments
     attributes = CommandAttributes(

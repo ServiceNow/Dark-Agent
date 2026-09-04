@@ -11,7 +11,7 @@
 #include "../includes/beacon.h"
 
 #ifdef TARGET_MACOS
-/* AF_LINK = 18 on macOS/BSD — link-layer addresses, IFF_* flags */
+/* AF_LINK = 18 on macOS/BSD for link-layer addresses and IFF_* flags */
 #define SA_FAMILY_LINK 18
 #define IFF_UP        0x1
 #define IFF_BROADCAST 0x2
@@ -23,7 +23,7 @@ void coffee() {
         return;
     }
 
-    /* heap-allocate seen[] — 16KB on the stack overflows the BOF thread */
+    /* heap-allocate seen[] because 16KB on the stack overflows the BOF thread */
     char (*seen)[64] = malloc(256 * 64);
     int seen_count = 0;
     if (!seen) { freeifaddrs(ifap); BeaconPrintf("Error: malloc"); return; }

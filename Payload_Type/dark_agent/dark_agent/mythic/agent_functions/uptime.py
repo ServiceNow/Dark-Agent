@@ -18,7 +18,7 @@ class UptimeCommand(CommandBase):
     help_cmd = "uptime"
     description = "Display system uptime information"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = []
     argument_class = UptimeArguments
     attributes = CommandAttributes(

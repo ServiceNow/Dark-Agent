@@ -24,7 +24,7 @@ mkdir -p "${MACOS_PREFIX}/include"
 mkdir -p /tmp/macos-libs-build
 cd /tmp/macos-libs-build
 
-# cmake needs single-binary tools — create wrappers since zig uses subcommands
+# cmake needs single-binary tools so create wrappers since zig uses subcommands
 # and cmake doesn't reliably propagate CMAKE_C_FLAGS to all compilation steps
 cat > /tmp/zig-ar << 'ZIGEOF'
 #!/bin/sh
@@ -112,7 +112,7 @@ echo "[+] libevent done"
 # Stub out missing SDK headers that bdw-gc needs for macOS targets.
 # The joseluisq MacOSX12.3.sdk omits some deprecated Mach headers.
 # These stubs satisfy the #include without pulling in real implementations
-# — bdw-gc's actual Darwin code paths are disabled via cmake flags below.
+# bdw-gc's actual Darwin code paths are disabled via cmake flags below.
 mkdir -p "${MACOS_SDK}/usr/include/mach-o"
 cat > "${MACOS_SDK}/usr/include/mach-o/getsect.h" << 'STUBEOF'
 #pragma once

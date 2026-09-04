@@ -17,10 +17,10 @@ class JobsCommand(CommandBase):
     help_cmd = "jobs"
     description = "List active BOF jobs with runtime information"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = JobsArguments
     attackmapping = []
-    browser_script = BrowserScript(script_name="jobs", author="@nicholas.romanowski")
+    browser_script = BrowserScript(script_name="jobs", author="@nicholasromanowski")
     attributes = CommandAttributes(
         builtin=True
     )

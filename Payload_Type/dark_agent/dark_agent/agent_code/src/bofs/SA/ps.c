@@ -64,7 +64,7 @@ void coffee(void) {
         /*
          * All local int/pointer variables (bsd_pid etc.) are subject to
          * stack corruption across function calls in the BOF ABI context.
-         * Read bsdinfo fields directly at the point of use — never via cached
+         * Read bsdinfo fields directly at the point of use never via cached
          * local variables that survive across external function calls.
          */
 

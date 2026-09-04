@@ -18,7 +18,7 @@ class CoffeeCommand(CommandBase):
     help_cmd = "coffee"
     description = "Brews a cup of coffee right in your shell :-)"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = []
     argument_class = CoffeeArguments
     attributes = CommandAttributes(

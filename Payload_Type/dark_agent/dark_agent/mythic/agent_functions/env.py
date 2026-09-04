@@ -23,7 +23,7 @@ class EnvCommand(CommandBase):
     help_cmd = "env"
     description = "Display environment variables"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1082"]
     argument_class = EnvArguments
     attributes = CommandAttributes(

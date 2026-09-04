@@ -33,7 +33,7 @@ class KrbDumpKirbiCommand(CommandBase):
     help_cmd = "krb_dump_kirbi <ccache>"
     description = "Dump credentials from a Kerberos credential cache in Kirbi format. Run krb_listccaches first to get cache names."
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     supported_ui_features = []
     attackmapping = ["T1558"]
     argument_class = KrbDumpKirbiArguments

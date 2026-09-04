@@ -350,7 +350,7 @@ module Dark::ELF
 
       # macOS SDK headers use __asm("_name") to embed a single leading underscore
       # into ELF symbol references (e.g. _stat, _popen). dlsym expects the name
-      # WITHOUT that prefix. Only strip when it's a single leading '_' — symbols
+      # WITHOUT that prefix. Only strip when it's a single leading '_' because symbols
       # like __stack_chk_guard start with double underscore and must be left intact.
       lookup_name = (symbol.name.starts_with?("_") && symbol.name.size > 1 && symbol.name[1] != '_') \
         ? symbol.name[1..] : symbol.name
@@ -384,7 +384,7 @@ module Dark::ELF
       # 2. sys_icache_invalidate (ic ivau): invalidates i-cache so code fetches
       #    go to main memory instead of seeing stale instruction cache lines.
       # 3. pthread_jit_write_protect_np(1): switch MAP_JIT region from write to exec mode.
-      # mprotect is NOT called — it would invalidate the d-cache, causing stale reads
+      # mprotect is NOT called because it would invalidate the d-cache, causing stale reads
       # when the trampoline's ldr x16, #8 runs.
       log_debug "Flushing JIT region to PoC before exec (darwin)"
       LibC.sys_dcache_flush(Pointer(Void).new(@thunk_base), @region_size)

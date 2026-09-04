@@ -16,7 +16,7 @@ from pathlib import Path
 class DarkAgent(PayloadType):
     name = "Dark Agent"
     file_extension = "bin"
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     supported_os = [SupportedOS.Linux, SupportedOS.MacOS]
     wrapper = False
     wrapped_payloads = ["dark_loader"]
@@ -420,7 +420,7 @@ class DarkAgent(PayloadType):
 
             if IS_MACOS:
                 # macOS cross-compile via Crystal + Zig.
-                # OpenSSL is statically linked for both platforms — no runtime libssl dependency.
+                # OpenSSL is statically linked for both platforms with no runtime libssl dependency.
                 if DEBUG_MODE:
                     build_cmd.extend(["-p", profile_name, "-M"])
                     output_file = agent_build_path / "output/dark-agent-macos-debug"

@@ -52,7 +52,7 @@ class RmCommand(CommandBase):
     help_cmd = "rm <filepath> [--recursive]"
     description = "Remove files and directories"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1070.004"]
     argument_class = RmArguments
     attributes = CommandAttributes(

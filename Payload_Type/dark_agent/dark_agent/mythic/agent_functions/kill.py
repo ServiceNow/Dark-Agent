@@ -43,7 +43,7 @@ class KillCommand(CommandBase):
     help_cmd = "kill <PID> [signal]"
     description = "Terminate a process by PID. Optional signal parameter (default: 15 - SIGTERM)"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     supported_ui_features = ["process_browser:kill"]
     attackmapping = ["T1489"]
     argument_class = KillArguments

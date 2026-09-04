@@ -16,7 +16,7 @@ class PsCommand(CommandBase):
     help_cmd = "ps"
     description = "List running processes"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     supported_ui_features = ["process_browser:list"]
     attackmapping = ["T1057"]
     argument_class = PsArguments
@@ -28,7 +28,7 @@ class PsCommand(CommandBase):
     )
     browser_script = BrowserScript(
         script_name="ps",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
 

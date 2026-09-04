@@ -68,7 +68,7 @@ class SocksCommand(CommandBase):
     description = "Enable SOCKS5 compliant proxy to send data to the target network."
     version = 2
     script_only = True
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = SocksArguments
     attackmapping = ["T1090"]
     attributes=CommandAttributes(

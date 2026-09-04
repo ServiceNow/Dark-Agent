@@ -24,7 +24,7 @@ class DfCommand(CommandBase):
     help_cmd = "df"
     description = "Display filesystem disk space usage (similar to df -h)"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1082"]
     argument_class = DfArguments
     attributes = CommandAttributes(
@@ -35,7 +35,7 @@ class DfCommand(CommandBase):
     )
     browser_script = BrowserScript(
         script_name="df",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
 

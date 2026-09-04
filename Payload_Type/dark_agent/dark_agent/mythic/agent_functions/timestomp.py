@@ -74,7 +74,7 @@ class TimestompCommand(CommandBase):
     help_cmd = "timestomp <target_file> <@reference_file|timestamp>"
     description = "Modify file timestamps that a specified timestamp or a @reference_file"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = TimestompArguments
     attackmapping = ["T1070.006"]
     attributes = CommandAttributes(

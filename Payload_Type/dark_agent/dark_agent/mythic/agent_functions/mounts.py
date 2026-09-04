@@ -24,7 +24,7 @@ class MountsCommand(CommandBase):
     help_cmd = "mounts"
     description = "List all mounted filesystems (similar to mount -l)"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1082"]
     argument_class = MountsArguments
     attributes = CommandAttributes(
@@ -35,7 +35,7 @@ class MountsCommand(CommandBase):
     )
     browser_script = BrowserScript(
         script_name="mounts",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
 

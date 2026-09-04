@@ -38,7 +38,7 @@ class BofExecuteCommand(CommandBase):
     help_cmd = "bof_exec [bof_name] [arguments]"
     description = "Execute a previously loaded BOF with optional arguments"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = BofExecuteArguments
     attackmapping = ["T1059"]
     hidden = False  # Make it visible since we'll be using it directly

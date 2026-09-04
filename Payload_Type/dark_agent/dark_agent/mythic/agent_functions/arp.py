@@ -23,7 +23,7 @@ class ArpCommand(CommandBase):
     help_cmd = "arp"
     description = "Display the ARP table showing IP to MAC address mappings"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1016"]
     argument_class = ArpArguments
     attributes = CommandAttributes(
@@ -34,7 +34,7 @@ class ArpCommand(CommandBase):
     )
     browser_script = BrowserScript(
         script_name="arp",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
 

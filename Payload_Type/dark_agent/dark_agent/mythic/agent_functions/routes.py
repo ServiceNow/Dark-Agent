@@ -23,7 +23,7 @@ class RoutesCommand(CommandBase):
     help_cmd = "routes"
     description = "Display the routing table"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1016"]
     argument_class = RoutesArguments
     attributes = CommandAttributes(
@@ -34,7 +34,7 @@ class RoutesCommand(CommandBase):
     )
     browser_script = BrowserScript(
         script_name="routes",
-        author="nicholas.romanowski@servicenow.com",
+        author="@nicholasromanowski",
         for_new_ui=True
     )
 

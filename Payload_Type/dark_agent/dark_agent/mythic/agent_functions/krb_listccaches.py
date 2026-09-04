@@ -17,7 +17,7 @@ class KrbListCcachesCommand(CommandBase):
     help_cmd = "krb_listccaches"
     description = "Enumerate all Kerberos credential caches"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     supported_ui_features = []
     attackmapping = ["T1558"]
     argument_class = KrbListCcachesArguments

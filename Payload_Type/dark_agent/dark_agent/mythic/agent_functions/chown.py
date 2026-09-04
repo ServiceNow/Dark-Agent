@@ -46,7 +46,7 @@ class ChownCommand(CommandBase):
     help_cmd = "chown <owner[:group]> <filepath>"
     description = "Change file or directory ownership"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1222.002"]
     argument_class = ChownArguments
     attributes = CommandAttributes(

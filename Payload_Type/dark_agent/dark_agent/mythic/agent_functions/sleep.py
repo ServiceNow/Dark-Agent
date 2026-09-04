@@ -62,7 +62,7 @@ class SleepCommand(CommandBase):
     help_cmd = "sleep <seconds> [jitter_percentage]"
     description = "Change the sleep interval with optional jitter"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = SleepArguments
     attackmapping = []
     attributes = CommandAttributes(

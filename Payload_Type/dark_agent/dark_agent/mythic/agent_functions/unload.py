@@ -30,7 +30,7 @@ class UnloadCommand(CommandBase):
     help_cmd = "unload [command]"
     description = "Unload a BOF command from the agent"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     argument_class = UnloadArguments
     attackmapping = ["T1129"]
     attributes = CommandAttributes(

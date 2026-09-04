@@ -47,7 +47,7 @@ class PortscanCommand(CommandBase):
     help_cmd = "portscan <host> <port1,port2,...>"
     description = "Scan specified ports on a target host to check if they're open"
     version = 1
-    author = "nicholas.romanowski@servicenow.com"
+    author = "@nicholasromanowski"
     attackmapping = ["T1046"]
     argument_class = PortscanArguments
     attributes = CommandAttributes(

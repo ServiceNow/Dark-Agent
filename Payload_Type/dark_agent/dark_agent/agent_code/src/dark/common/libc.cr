@@ -19,7 +19,7 @@ lib LibC
   fun pthread_jit_write_protect_np(enable : Int32) : Void
   # Flush instruction cache lines (to Point of Unification)
   fun sys_icache_invalidate(start : Pointer(Void), size : SizeT) : Void
-  # Flush data cache lines to Point of Coherency (main memory) — needed before mprotect
+  # Flush data cache lines to Point of Coherency (main memory) before mprotect
   fun sys_dcache_flush(start : Pointer(Void), size : SizeT) : Void
   {% end %}
 end
