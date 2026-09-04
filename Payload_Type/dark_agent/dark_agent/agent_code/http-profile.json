@@ -1,0 +1,76 @@
+{
+	"description": "Created by mythic_admin at 2025-05-29 16:17:07 Z",
+	"payload_type": "dark agent",
+	"c2_profiles": [
+		{
+			"c2_profile": "http",
+			"c2_profile_is_p2p": false,
+			"c2_profile_parameters": {
+				"AESPSK": {
+					"dec_key": "rtCe/hFHPM4O4lqUwZBwktpzp6ObCyqWRwHzYfXifdc=",
+					"enc_key": "rtCe/hFHPM4O4lqUwZBwktpzp6ObCyqWRwHzYfXifdc=",
+					"value": "aes256_hmac"
+				},
+				"callback_host": "http://127.0.0.1",
+				"callback_interval": 5,
+				"callback_jitter": 23,
+				"callback_port": 80,
+				"encrypted_exchange_check": true,
+				"get_uri": "index",
+				"headers": {
+					"User-Agent": "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko"
+				},
+				"killdate": "2026-03-26",
+				"post_uri": "data",
+				"proxy_host": "",
+				"proxy_pass": "",
+				"proxy_port": "",
+				"proxy_user": "",
+				"query_path_name": "q"
+			}
+		}
+	],
+	"build_parameters": [
+		{
+			"name": "symmetric_jitter",
+			"value": false
+		},
+		{
+			"name": "disable_encryption",
+			"value": false
+		},
+		{
+			"name": "chunk_size",
+			"value": 512
+		},
+		{
+			"name": "realtime",
+			"value": false
+		},
+		{
+			"name": "disable_ssl_verify",
+			"value": true
+		},
+		{
+			"name": "debug_mode",
+			"value": false
+		}
+	],
+	"commands": [
+		"socks",
+		"load",
+		"ls",
+		"unload",
+		"bof_exec",
+		"exit",
+		"bof_load",
+		"upload",
+		"download",
+		"sleep",
+		"bof_list",
+		"bof_unload"
+	],
+	"selected_os": "Linux",
+	"filename": "dark agent.bin",
+	"wrapped_payload": ""
+}

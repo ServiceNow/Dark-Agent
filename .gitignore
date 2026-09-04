@@ -1,0 +1,14 @@
+/docs/
+/lib/
+/bin/
+/.shards/
+*.dwarf
+**/output
+**/__pycache__
+*.o
+*.swp
+.DS_Store
+.idea/
+/examples/
+Payload_Type/dark_agent/dark_agent/agent_code/darkagent-http.bin
+CLAUDE.md
