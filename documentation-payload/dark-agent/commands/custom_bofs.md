@@ -97,7 +97,7 @@ Once compiled, your BOF can be loaded into the agent:
 1. **Using manual loading**:
    ```
    bof_load your_bof
-   bof_execute your_bof arg1 arg2
+   bof_exec my_custom_bof split_args string_args
    ```
 
 2. **Creating a Mythic command wrapper** (advanced):
@@ -129,7 +129,7 @@ Compile and use:
 gcc -fPIC -c hostname.c -o hostname.o -I src/bofs/c/includes
 # In Mythic:
 bof_load hostname
-bof_execute hostname
+bof_exec hostname
 ```
 
 ## Advanced BOF Development

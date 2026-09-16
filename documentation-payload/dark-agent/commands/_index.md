@@ -44,7 +44,7 @@ Dark Agent implements a special system where most BOF-based commands have a corr
 
 3. **Executing BOFs Directly**: For BOFs that don't have a Mythic command wrapper, or for custom BOFs, you can execute them using:
    ```
-   bof_execute [bof_name] [args]
+   bof_exec [bof_name] [args]
    ```
 
 ## Available Commands
@@ -73,7 +73,7 @@ Dark Agent implements a special system where most BOF-based commands have a corr
 | load | Load a BOF and register it as a Mythic command | `file_id`: Mythic file ID<br>`name`: Name to register |
 | unload | Unload a command from memory | `name`: Command name to unload |
 | bof_load | Load a BOF into memory without registering | `command`: BOF name<br>`file_id`: Mythic file ID |
-| bof_exec | Execute a previously loaded BOF | `name`: BOF name<br>`arguments`: Arguments to pass to BOF |
+| bof_exec | Execute a previously loaded BOF | `name`: BOF name<br>`split_arguments`: Split arguments to pass to BOF<br>`string_arguments`: String arguments to pass to BOF |
 | bof_unload | Unload a BOF from memory | `name`: BOF name to unload |
 | bof_list | List all loaded BOFs | None |
 | bof_purge | Remove all BOFs from memory | None |
@@ -130,11 +130,11 @@ bof_load my_custom_bof
 my_custom_bof arg1 arg2
 ```
 
-Or use `bof_execute` directly:
+Or use `bof_exec` directly:
 
 ```
 bof_load my_custom_bof
-bof_execute my_custom_bof arg1 arg2
+bof_exec my_custom_bof split_args string_args
 ```
 
 ## Creating Custom BOFs
