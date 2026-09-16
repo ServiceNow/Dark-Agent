@@ -83,8 +83,16 @@ class DarkAgent(PayloadType):
             required=True,
             group_name="Communication Options"
         ),
+        BuildParameter(
+            name="identifier_name",
+            parameter_type=BuildParameterType.String,
+            description="MacOS specific value to specify the base value of the identifier in the output binaries adhoc code signature. Default is dark-agent-macos.",
+            default_value="dark-agent-macos",
+            required=False,
+            group_name="Compilation Options",
+            supported_os=["macOS"]
+        ),
     ]
-
     agent_path = pathlib.Path(".") / "dark_agent" / "mythic"
     agent_code_path = pathlib.Path(".") / "dark_agent" / "agent_code"
     agent_icon_path = agent_path / "dark.svg"
@@ -421,12 +429,13 @@ class DarkAgent(PayloadType):
             if IS_MACOS:
                 # macOS cross-compile via Crystal + Zig.
                 # OpenSSL is statically linked for both platforms with no runtime libssl dependency.
+                filename = self.get_parameter("identifier_name")
                 if DEBUG_MODE:
-                    build_cmd.extend(["-p", profile_name, "-M"])
-                    output_file = agent_build_path / "output/dark-agent-macos-debug"
+                    build_cmd.extend(["-p", profile_name, "-M", "-i", filename])
+                    output_file = agent_build_path / f"output/{filename}-debug"
                 else:
-                    build_cmd.extend(["-p", profile_name, "-m"])
-                    output_file = agent_build_path / "output/dark-agent-macos"
+                    build_cmd.extend(["-p", profile_name, "-m", "-i", filename])
+                    output_file = agent_build_path / f"output/{filename}"
                 binary_type = "Mach-O"
             else:
                 # Linux build

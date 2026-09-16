@@ -86,6 +86,9 @@ When creating a payload in Mythic, you can configure the following build paramet
 - **realtime** (Boolean, default: false) - Immediately sends pending command responses without waiting for sleep interval
 - **chunk_size** (Number, default: 512) - Size of file transfer chunks in KB, affects upload/download performance
 
+**Compilation Behaviour:**
+- **identifier_name** (String, default: dark-agent-macos) - MacOS only. Sets the base value of the identifier in the payloads code signature
+
 ### Debugging
 
 The debug build provides detailed logging to help with troubleshooting:

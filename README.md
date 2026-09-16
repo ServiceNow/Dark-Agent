@@ -34,6 +34,7 @@ Linux builds have OpenSSL statically linked with no `libssl` dependency on the t
 - `symmetric_jitter`: Boolean (default: false) - Use symmetric jitter (sleep_time ± jitter%) for better OPSEC
 - `realtime`: Boolean (default: false) - Immediately send command responses without waiting for sleep interval
 - `chunk_size`: Number (default: 512) - Size of file transfer chunks in KB, affects upload/download performance
+- `identifier_name`: String (default: dark-agent-macos) - MacOS only. Sets the base value of the identifier in the payloads code signature
 
 **Available Commands**: Extensive built-in commands including system utilities, file operations, network tools, and agent management
 

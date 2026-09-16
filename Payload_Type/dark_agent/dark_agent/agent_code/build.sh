@@ -211,7 +211,7 @@ build_macos() {
         -Dpreview_mt \
         -Dgc_none \
         ${crystal_flags} \
-        -o "${output_file}" \
+        -o "${OBJ_FILE}" \
         src/dark/dark-agent.cr
 
     if [ $? -ne 0 ]; then
@@ -265,11 +265,11 @@ GCEOF
 }
 
 build_macos_release() {
-    build_macos "--release --no-debug" "output/dark-agent-macos" "release mode"
+    build_macos "--release --no-debug" "output/${MACOS_OUTPUT_NAME}" "release mode"
 }
 
 build_macos_debug() {
-    build_macos "-D debug" "output/dark-agent-macos-debug" "debug mode"
+    build_macos "-D debug" "output/${MACOS_OUTPUT_NAME}-debug" "debug mode"
 }
 
 
@@ -277,6 +277,10 @@ build_macos_debug() {
 clean() {
     log_action "Cleaning output directory..."
     rm -f output/dark-agent output/dark-agent-debug output/dark-agent-direct output/dark-agent-direct.ll output/socks-server output/dark-agent-socks-debug output/dark-agent-macos output/dark-agent-macos-debug output/dark-agent-macos*.o
+    # Also clean custom-named macOS outputs (from -i) if different from the default
+    if [ "$MACOS_OUTPUT_NAME" != "dark-agent-macos" ]; then
+        rm -f "output/${MACOS_OUTPUT_NAME}" "output/${MACOS_OUTPUT_NAME}-debug" output/"${MACOS_OUTPUT_NAME}"*.o
+    fi
     rm -f output/bofs/*.o output/bofs/macos/*.o 2>/dev/null || true
     log_success "Cleaned Dark Agent builds and BOF object files"
 }
@@ -297,11 +301,15 @@ usage() {
     echo "  -B    Build BOF object files for macOS (aarch64)"
     echo "  -m    Build macOS Mach-O binary (release)"
     echo "  -M    Build macOS Mach-O binary (debug)"
+    echo "  -i    Specify output filename base for macOS builds (replaces 'dark-agent-macos', default: dark-agent-macos)"
     echo "  -h    Show this help message"
 }
 
 # Default profile type is http
 PROFILE_TYPE="http"
+
+# Default output filename base for macOS builds
+MACOS_OUTPUT_NAME="dark-agent-macos"
 
 # Execute build actions based on provided arguments
 execute_build() {
@@ -359,7 +367,7 @@ if [ $# -eq 0 ]; then
     exit 0
 fi
 
-while getopts "abdrcDsShjBmMp:x:" opt; do
+while getopts "abdrcDsShjBmMp:x:i:" opt; do
     case $opt in
         a) BUILD_ACTION="all" ;;
         b) BUILD_ACTION="bofs" ;;
@@ -384,6 +392,10 @@ while getopts "abdrcDsShjBmMp:x:" opt; do
         x)
             DEBUG_SOCKS=1
             log_info "SOCKS debug mode enabled"
+            ;;
+        i)
+            MACOS_OUTPUT_NAME="$OPTARG"
+            log_info "Using macOS output filename base: $MACOS_OUTPUT_NAME"
             ;;
         \?)
             usage
